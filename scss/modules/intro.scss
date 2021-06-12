@@ -33,8 +33,8 @@
         width: 65%;
         background-color: $textColor;
         padding: 3px;
-        display: flex;
         justify-content: space-between;
+        display: flex;
 
         &-btn {
             padding: 11px 20px;
@@ -98,18 +98,12 @@
     background-color: $accentColor;
     color: $textColor;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
     height: auto;
     padding: 15px 20% 15px;
 
-    @include media ($tablet) {
-        flex-direction: row;
-        height: auto;
-        justify-content: space-between
-    }
 
     &__heading {
         @include mainFont ($textColor, 400);
@@ -117,13 +111,23 @@
         font-size: 1.2rem;
     }
 
-    &__nav {
-        display: flex;
+    .burger {
+        color: $textColor;
+        font-size: 1.2rem;
+        cursor: pointer;
+        
+        @include media ($tablet) {
+            display: none;
+        }
+    }
+
+    &__nav {        
+        display: none;
         justify-content: space-between;
-        flex-direction: column;
 
         @include media ($tablet) {
             flex-direction: row;
+            display: flex;
         }
 
         &-link {
