@@ -1,0 +1,30 @@
+@use 'mixin' as *;
+@use 'var' as *;
+
+
+.container {
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+
+    @include media ($phone) {
+        width: 50%;
+    }
+
+    @include media ($tablet) {
+        width: 70%;
+    }
+}
+
+.btn {
+    background-color: $accentColor;
+    border: none;
+    color: $textColor;
+    display: inline-block;
+    text-transform: uppercase;
+    @include scndFont ($textColor, 400);
+    font-size: .7rem;
+    padding: 10px 20px;
+    width: max-content;
+}
+
