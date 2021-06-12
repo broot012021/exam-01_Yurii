@@ -1,0 +1,52 @@
+@use '../components/' as *;
+
+.main-footer {
+    background-color: $darkSection;
+    padding-bottom: 30px;
+
+    .container {
+        width: max-content;
+        @include flexCenter;
+        flex-direction: column;
+    }
+}
+
+.footer {
+
+    &__heading {
+        @include mainFont ($textColor, 400);
+        text-transform: uppercase;
+
+        @include media ($tablet) {
+            margin-top: 50px;
+        }
+    }
+
+    &__subheader {
+        @include mainFont ($textColor, 300);
+        text-transform: capitalize;
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+}
+
+.social {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;    
+
+    &__icon {
+        width: 20%;
+        color: $textColor;
+        font-size: 1rem;
+        transition: 500ms ease;
+        cursor: pointer;
+        
+        &:hover,
+        &:focus {
+            color: $accentColor;
+        }
+    }
+}
