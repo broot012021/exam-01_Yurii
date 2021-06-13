@@ -50,16 +50,24 @@
     }
 
     &__text {
-        margin-top: 20px;
+        margin-top: 30px;
         @include mainFont($textColor, 300);
-        font-weight: 300;
         font-size: 1rem;
         line-height: 1.2rem;
-        // padding: 10px;
-        i {
+        
+        &::before {
+            display: inline-block;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f10d";
             color: $accentColor;
-            font-size: 1.2rem;
-            margin: -5px 10px 0 0;
+            font-size: 1.4rem;
+            transform: translateY(-10px);
+            margin: 3px;
         }
     }
 }
