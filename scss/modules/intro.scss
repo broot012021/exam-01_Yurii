@@ -37,8 +37,17 @@
         display: flex;
 
         &-btn {
-            padding: 11px 20px;
-            
+            padding: 11px 14px 11px 20px;
+            background-image: none;
+            background-color: $accentColor;
+            display: flex;
+            gap: 5px;
+            align-items: center;
+
+            span {
+                color: $textColor;
+                font-size: 1.2rem;
+            }
         }
     }
 
@@ -55,18 +64,14 @@
     }
     
     .content {
-    margin-top: 40px;
-    @include flexCenter;
-    flex-direction: column;
+        margin-top: 40px;
+        @include flexCenter;
+        flex-direction: column;
 
-    @include media ($tablet) {
-        margin-top: 60px;
+        @include media ($tablet) {
+            margin-top: 60px;
+        }
     }
-}
-
-
-
-
 }
 
 .scroll {
@@ -99,10 +104,14 @@
     color: $textColor;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
     width: 100%;
     height: auto;
     padding: 15px 20% 15px;
+
+    @include media ($tablet) {
+        align-items: center;
+    }
 
 
     &__heading {

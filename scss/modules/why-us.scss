@@ -9,7 +9,8 @@
     .container {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 20px;
+        position: relative;
 
         @include media ($tablet) {
             flex-direction: row;
@@ -74,16 +75,31 @@
 
 .search-places {
     background-color: $darkSection;
+    padding-top: 30px;
     .container {
-        
+        position: relative;
         
         @include media ($tablet) {
             flex-direction: row;
             justify-content: space-between;
-            background-image: url(../assets/img/wawes-shape.png);
+            // background-image: url(../assets/img/wawes-shape.png);
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
+        }
+
+        @include media ($desktop) {
+            &::before {
+                content: '';
+                position: absolute;
+                background-image: url(../../assets/img/wawes-shape.png);
+                top: -80px;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                @include bgCover;
+                background-size: auto;
+            }
         }
     }
 }
@@ -92,12 +108,12 @@
     font-size: 3rem;
     display: flex;
     flex-direction: column;
-    gap: 10px;
     width: 60px;
     height: 60px;
     text-align: center;
     border-radius: 50%;
     background-color: $darkSection;
+    z-index: 2;
 
     &__wrapper {
         @include flexCenter;
@@ -107,7 +123,6 @@
     &__heading {
         font-weight: 300;
         text-transform: capitalize;
-        margin-top: 10px;
     }
     
     &-search {
